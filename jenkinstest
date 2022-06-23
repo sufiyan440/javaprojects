@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+    PATH = "/usr/share/maven/bin:$PATH"
+    }
 
     stages {
         stage('git checkout') {
@@ -7,5 +10,10 @@ pipeline {
                 git credentialsId: 'Gitcrd', url: 'https://github.com/sufiyan440/javaprojects.git'
             }
         }
-    }
+        stage('Maven Build') {
+        steps {
+        sh "mvn claen package"
+        }
+        }
+            }
 }
