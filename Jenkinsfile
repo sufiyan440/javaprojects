@@ -2,19 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('compile') {
+        stage('Git checkout') {
             steps {
-                sh "mvn compile"
-            }
-        }
-        stage('Test') {
-            steps {
-                sh "mvn test"
-            }
-        }
-        stage('package') {
-            steps {
-                sh "mvn package"
+                git credentialsId: 'Gitcrd', url: 'https://github.com/sufiyan440/javaprojects.git'
             }
         }
     }
