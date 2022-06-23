@@ -9,6 +9,7 @@ pipeline {
                 git credentialsId: 'Gitcrd', url: 'https://github.com/sufiyan440/javaprojects.git'
             }
         }
+       stage('Maven Build) { 
         steps {
             sh "mvn clean package"
             }
