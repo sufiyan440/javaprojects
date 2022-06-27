@@ -1,4 +1,4 @@
-currentBuild.displayName = "billing-#"+currentbuild.number
+currentBuild.displayName = "billing-#"+currentBuild.number
 
 pipeline {
     agent any
