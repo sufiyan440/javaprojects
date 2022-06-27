@@ -1,3 +1,4 @@
+currentBuild.displayname = "onlineshopping-#"+currentBuild.number
 pipeline {
     agent any
     environment {
